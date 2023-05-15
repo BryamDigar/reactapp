@@ -57,7 +57,7 @@ export const EstudiantesApp = () => {
             <FormularioEstudiante agregar={(estu) => { agregarEstudiante(estu) }} />
             <form onSubmit={buscarEstudianteFacultad}>
                 <div>
-                    <label htmlFor="search">Buscar:</label>
+                    <label htmlFor="search" className="label">Buscar:</label>
                     <select name="facultadBuscar" id="facultadBuscar" value={facultadBuscar} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultadBuscar(event.target.value)}}>
                         <option value=""></option>
                         <option value="Comunicacion">Comunicacion</option>
