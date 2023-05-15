@@ -1,0 +1,45 @@
+.form-group {
+    width: 500px;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+.labelform {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    width: 500px;
+    margin: 10px;
+    margin-left: 20px;
+  }
+  
+  .form-select {
+    width: 500px;
+    margin: 10px;
+    margin-left: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .btn{
+    margin: 10px;
+    margin-left: 20px;
+  }
+  
+  
