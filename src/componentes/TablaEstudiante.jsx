@@ -6,8 +6,8 @@ export const TablaEstudiante =  ({listaEstudiantes, borrarEstudiante }) => {
 
     return (
         <>
-            <table className="table">
-                <thead>
+            <table className="table table-striped">
+                <thead className="table-info">
                     <tr>
                         <th scope="col">Id Estudiante</th>
                         <th scope="col">Nombre</th>
@@ -26,13 +26,15 @@ export const TablaEstudiante =  ({listaEstudiantes, borrarEstudiante }) => {
                             <td>{estudiante.facultad}</td>
                             <td>{estudiante.programa}</td>
                             <td> 
-                            <button className="btn btn-info">Editar</button> 
-                            <button className="btn btn-danger" onClick={()=>borrarEstudiante(estudiante.id)}>Eliminar</button>
+                            <button className="btn btn-outline-info me-2">Editar</button> 
+                            <button className="btn btn-outline-danger" onClick={()=>borrarEstudiante(estudiante.id)}>Eliminar</button>
                             </td>
                         </tr>)
                     }
                 </tbody>
             </table>
         </>
+
+        
     )
 }

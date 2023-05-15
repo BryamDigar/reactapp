@@ -68,6 +68,7 @@ export const EstudiantesApp = () => {
                     </select>
                     <button type="submit" className="btn btn-primary">Buscar</button>
                 </div>
+                <br></br>
             </form>
             <TablaEstudiante listaEstudiantes={estudiantes} borrarEstudiante={borrarEstudiante} />
         </>
