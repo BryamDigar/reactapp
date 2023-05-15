@@ -1,11 +1,4 @@
-import { useState } from "react"
-
-export const FormularioEstudiante = ({ agregar , buscarName }) => {
-    const [nombre, setNombre] = useState("");
-    const [semestre, setSemestre] = useState("");
-    const [facultad , setFacultad] = useState("")
-    const [programa , setPrograma] = useState("")
-    
+export const FormularioEstudiante = ({ agregar , nombre, semestre, facultad, programa, setNombre, setFacultad, setSemestre, setPrograma }) => {
 
     const guardarEstudiante = (event) => {
         event.preventDefault();
@@ -16,11 +9,7 @@ export const FormularioEstudiante = ({ agregar , buscarName }) => {
             facultad: facultad,
             programa: programa
         }
-
         agregar(estudiante)
-        setNombre("");
-        setSemestre("");
-        setFacultad("");
     }
 
 
@@ -33,11 +22,11 @@ export const FormularioEstudiante = ({ agregar , buscarName }) => {
                 </div>
                 <div>
                     <label htmlFor="semestre">Escoge tu semestre:</label>
-                    <select name="semestre" id="semestre" value={semestre} className="form-select" aria-label="Default select example" onChange={(event) =>  {setSemestre(event.target.value)}}>
+                    <select name="semestre" id="semestre" value={semestre} className="form-select" aria-label="Default select example" onChange={(event) => setSemestre(event.target.value)}>
                         <option value=""></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
-                        <option value="3" >3</option>
+                        <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                         <option value="6">6</option>
@@ -49,7 +38,7 @@ export const FormularioEstudiante = ({ agregar , buscarName }) => {
                 </div>
                 <div>
                     <label htmlFor="facultad">Escoge tu Facultad:</label>
-                    <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultad(event.target.value)}}>
+                    <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  setFacultad(event.target.value)}>
                         <option value=""></option>
                         <option value="Comunicacion">Comunicacion</option>
                         <option value="Derecho">Derecho</option>
