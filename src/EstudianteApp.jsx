@@ -5,7 +5,7 @@ import { getEstudiantes } from "./peticiones/getEstudiantes";
 import { postEstudiantes } from "./peticiones/postEstudiante";
 import { deleteEstudiante } from "./peticiones/deleteEstudiante";
 import { getFacultadEstudiantes } from "./peticiones/getFacultadEstudiantes";
-
+import "./Estudiante.css"
 
 
 //<ListaEstudiantes lista={estudiantes}/>
@@ -57,8 +57,8 @@ export const EstudiantesApp = () => {
             <FormularioEstudiante agregar={(estu) => { agregarEstudiante(estu) }} />
             <form onSubmit={buscarEstudianteFacultad}>
                 <div>
-                    <label htmlFor="search" className="label">Buscar:</label>
-                    <select name="facultadBuscar" id="facultadBuscar" value={facultadBuscar} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultadBuscar(event.target.value)}}>
+                    <label htmlFor="search" className="labelBuscar">Buscar:</label>
+                    <select name="facultadBuscar" id="facultadBuscar" value={facultadBuscar} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultadBuscar(event.target.value)}} style={{ width: "500px" }}>
                         <option value=""></option>
                         <option value="Comunicacion">Comunicacion</option>
                         <option value="Derecho">Derecho</option>

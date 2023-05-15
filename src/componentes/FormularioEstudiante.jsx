@@ -50,7 +50,7 @@ export const FormularioEstudiante = ({ agregar , buscarName }) => {
                 </div>
                 <div>
                     <label htmlFor="facultad" className="labelform">Escoge tu Facultad:</label>
-                    <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  {setSemestre(event.target.value)}} style={{ width: "500px" }}>
+                    <select name="facultad" id="facultad" value={facultad} className="form-select" aria-label="Default select example" onChange={(event) =>  {setFacultad(event.target.value)}} style={{ width: "500px" }}>
                         <option value=""></option>
                         <option value="Comunicacion">Comunicacion</option>
                         <option value="Derecho">Derecho</option>
