@@ -1,8 +1,6 @@
 
-
-export const TablaEstudiante =  ({listaEstudiantes, borrarEstudiante }) => {
+export const TablaEstudiante =  ({listaEstudiantes, borrarEstudiante, EstudianteStatus }) => {
       
-   
 
     return (
         <>

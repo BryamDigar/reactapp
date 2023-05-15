@@ -13,6 +13,27 @@ import "./Estudiante.css"
 export const EstudiantesApp = () => {
     const [estudiantes, setEstudiantes] = useState([]);
     const [facultadBuscar, setFacultadBuscar] = useState("");
+    const [focuEstudiante, setforcuEstudiante] = useState(null);
+
+    const [nombre, setNombre] = useState("");
+    const [semestre, setSemestre] = useState("");
+    const [facultad , setFacultad] = useState("");
+    const [programa , setPrograma] = useState("");
+
+
+    const estudianteStatus = (estudent) => {
+        console.log(estudent);
+        setforcuEstudiante(estudent);
+        deleteEstudiante(estudent.id);
+    }
+
+    if (focuEstudiante != null){
+        setNombre(focuEstudiante.name);
+        setSemestre(focuEstudiante.semestre);
+        setFacultad(focuEstudiante.facultad);
+        setPrograma(focuEstudiante.programa);
+        setforcuEstudiante(null);
+    }
 
     const cargueEstudiantes = async () => {
         const datos = await getEstudiantes();
@@ -23,13 +44,14 @@ export const EstudiantesApp = () => {
             console.log("facultadBuscar")
         }else{
             cargueEstudiantes();
-            console.log("hola")
         }
     });
 
     const agregarEstudiante = (estudiante) => {
         setEstudiantes([...estudiantes, estudiante]);
-        postEstudiantes(estudiante);
+        postEstudiantes(estudiante);                
+        setforcuEstudiante(null);
+
     }
 
     const borrarEstudiante = (id) => {
@@ -54,7 +76,7 @@ export const EstudiantesApp = () => {
 
     return (
         <>
-            <FormularioEstudiante agregar={(estu) => { agregarEstudiante(estu) }} />
+            <FormularioEstudiante agregar={(estu) => { agregarEstudiante(estu)}} nombre={nombre} semestre={semestre} facultad={facultad} programa={programa} setNombre={(event)=>setNombre(event)} setSemestre={(event)=>setSemestre(event)} setFacultad={(event)=>setFacultad(event)} setPrograma={(event)=>setPrograma(event)}/>
             <form onSubmit={buscarEstudianteFacultad}>
                 <div>
                     <label htmlFor="search" className="labelBuscar">Buscar:</label>
@@ -70,7 +92,7 @@ export const EstudiantesApp = () => {
                 </div>
                 <br></br>
             </form>
-            <TablaEstudiante listaEstudiantes={estudiantes} borrarEstudiante={borrarEstudiante} />
+            <TablaEstudiante listaEstudiantes={estudiantes} borrarEstudiante={borrarEstudiante} EstudianteStatus={estudianteStatus} />
         </>
     )
 }
