@@ -1,11 +1,7 @@
 import { useState } from "react"
 import "./Formulario.css"
 
-export const FormularioEstudiante = ({ agregar , buscarName }) => {
-    const [nombre, setNombre] = useState("");
-    const [semestre, setSemestre] = useState("");
-    const [facultad , setFacultad] = useState("")
-    const [programa , setPrograma] = useState("")
+export const FormularioEstudiante = ({ agregar , nombre, semestre, facultad, programa, setNombre, setFacultad, setSemestre, setPrograma }) => {
     
 
     const guardarEstudiante = (event) => {

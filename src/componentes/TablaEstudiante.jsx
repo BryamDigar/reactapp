@@ -24,7 +24,7 @@ export const TablaEstudiante =  ({listaEstudiantes, borrarEstudiante, Estudiante
                             <td>{estudiante.facultad}</td>
                             <td>{estudiante.programa}</td>
                             <td> 
-                            <button className="btn btn-outline-info me-2">Editar</button> 
+                            <button className="btn btn-outline-info me-2" onClick={()=>EstudianteStatus(estudiante)}>Editar</button> 
                             <button className="btn btn-outline-danger" onClick={()=>borrarEstudiante(estudiante.id)}>Eliminar</button>
                             </td>
                         </tr>)
